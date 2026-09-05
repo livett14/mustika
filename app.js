@@ -4,7 +4,7 @@ const PACKAGES = [
   { coins: 15000, price: 181.8 },
 ];
 
-// Rate per Coin: dipakai untuk Saldo Koin Mustika DAN untuk modal jumlah khusus (keypad)
+// Rate per Coin: dipakai untuk Tiktok Coins Balance DAN untuk modal jumlah khusus (keypad)
 const BALANCE_COIN_UNIT_PRICE = 0.013; // $ per coin
 
 const state = {
@@ -151,7 +151,7 @@ function handleKeypadPress(key) {
 }
 
 function handleModalAll() {
-  // Ambil datanya dari Saldo Koin Mustika (jumlah coin yang dimiliki)
+  // Ambil datanya dari Tiktok Coins Balance (jumlah coin yang dimiliki)
   const maxCoins = Math.max(0, state.coinEquivalent);
   modalDigits = String(maxCoins);
   renderModal();
@@ -162,11 +162,11 @@ function confirmModal() {
   const cost = coins * BALANCE_COIN_UNIT_PRICE;
   if (coins <= 0) return;
   if (cost > state.coinBalance) {
-    showToast("Saldo Koin Mustika tidak cukup untuk jumlah ini");
+    showToast("Tiktok Coins Balance tidak cukup untuk jumlah ini");
     return;
   }
   if (!state.activeUsername) {
-    showToast("Isi Username Mustika terlebih dahulu");
+    showToast("Isi TikTok username terlebih dahulu");
     return;
   }
   state.customCoins = coins;
@@ -179,7 +179,7 @@ function confirmModal() {
   openConfirmModal();
 }
 
-// ---- Popup konfirmasi "Selesaikan penukaran?" ----
+// ---- Popup konfirmasi "Complete exchange?" ----
 function getPendingExchange() {
   const hasPackage = state.selectedPackage !== null;
   const hasCustom = state.customCoins && state.customCoins > 0;
@@ -195,7 +195,7 @@ function openConfirmModal() {
   if (!pending) return;
 
   $("confirmText").innerHTML =
-    `${formatUSD(pending.price)} akan dipotong dari Saldo Koin Mustika dan dikirim ke <strong>@${state.activeUsername}</strong>`;
+    `${formatUSD(pending.price)} will be deducted from LIVE rewards balance and sent to <strong>@${state.activeUsername}</strong>`;
   $("confirmModalOverlay").classList.add("open");
   document.body.style.overflow = "hidden";
 }
@@ -214,7 +214,7 @@ function setConfirmLoading(loading) {
     okBtn.disabled = true;
     cancelBtn.disabled = true;
   } else {
-    okBtn.textContent = okBtn.dataset.label || "Tukar";
+    okBtn.textContent = okBtn.dataset.label || "Exchange";
     okBtn.disabled = false;
     cancelBtn.disabled = false;
   }
@@ -226,7 +226,7 @@ function performExchange() {
   const { price, coins } = pending;
 
   if (state.coinBalance < price) {
-    showToast("Saldo Koin Mustika tidak cukup untuk jumlah ini");
+    showToast("Tiktok Coins Balance tidak cukup untuk jumlah ini");
     return null;
   }
 
@@ -424,7 +424,7 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
   });
 
-  // Popup konfirmasi "Selesaikan penukaran?"
+  // Popup konfirmasi "Complete exchange?"
   $("confirmModalClose").addEventListener("click", () => {
     if ($("confirmOkBtn").disabled) return;
     closeConfirmModal();
