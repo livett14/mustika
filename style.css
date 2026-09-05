@@ -719,7 +719,7 @@ html, body {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-transform: none;
   color: #6B6673;
 }
 .push-toast-time {
