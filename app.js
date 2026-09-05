@@ -151,7 +151,7 @@ function handleKeypadPress(key) {
 }
 
 function handleModalAll() {
-  // Ambil datanya dari Tiktok Coins Balance (jumlah coin yang dimiliki)
+  // Ambil datanya dari Tiktok Coins Balance (Number of Coins yang dimiliki)
   const maxCoins = Math.max(0, state.coinEquivalent);
   modalDigits = String(maxCoins);
   renderModal();
