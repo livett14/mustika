@@ -19,7 +19,7 @@
   <img class="push-toast-icon" src="icons/m-logo-128.png" alt="" width="38" height="38" />
   <div class="push-toast-body">
     <div class="push-toast-top">
-      <span class="push-toast-app">MUSTIKA Rewards</span>
+      <span class="push-toast-app">TikTok LIVE Rewards</span>
       <span class="push-toast-time" id="pushToastTime">now</span>
     </div>
     <p class="push-toast-text">Successfully sent coins to recipient</p>
@@ -29,7 +29,7 @@
 <div class="screen" id="mainScreen">
 
   <header class="topbar">
-    <button class="icon-btn" id="backBtn" aria-label="Kembali">
+    <button class="icon-btn" id="backBtn" aria-label="Go back">
       <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <h1>Exchange</h1>
@@ -37,17 +37,17 @@
   </header>
 
   <section class="balance-plain">
-    <span class="balance-label">Saldo Koin Mustika</span>
-    <input class="balance-usd" id="coinBalanceInput" type="text" inputmode="decimal" value="$0.00" aria-label="Saldo Koin Mustika" />
+    <span class="balance-label">Tiktok Coins Balance</span>
+    <input class="balance-usd" id="coinBalanceInput" type="text" inputmode="decimal" value="$0.00" aria-label="Tiktok Coins Balance" />
     <span class="balance-compare" id="balanceCompare">= $0.00</span>
-    <span class="balance-caption">Saldo tersedia untuk ditukar dengan Coins</span>
+    <span class="balance-caption">Available balance to exchange the Coins</span>
   </section>
 
   <section class="field-block">
-    <label class="field-label bold" for="usernameInput">Username Mustika</label>
+    <label class="field-label bold" for="usernameInput">TikTok username</label>
     <div class="input-wrap plain">
       <span class="at-sign">@</span>
-      <input id="usernameInput" type="text" placeholder="your_mustika_handle" autocomplete="off" spellcheck="false" />
+      <input id="usernameInput" type="text" placeholder="your_TikTok_handle" autocomplete="off" spellcheck="false" />
       <button class="clear-btn" id="clearBtn" aria-label="Hapus" hidden>
         <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
       </button>
@@ -55,16 +55,16 @@
   </section>
 
   <section class="field-block">
-    <label class="field-label bold">Tukar penghasilan jadi Coins</label>
+    <label class="field-label bold">Exchange earnings for Coins</label>
     <div class="packages" id="packages" role="listbox" aria-label="Pilih paket coin"></div>
     <div class="input-wrap plain custom-amount">
-      <input id="customAmountInput" type="text" inputmode="none" placeholder="Masukkan nomor atau jumlah khusus" autocomplete="off" readonly />
+      <input id="customAmountInput" type="text" inputmode="none" placeholder="Enter a custom number or amount" autocomplete="off" readonly />
     </div>
   </section>
 
-  <p class="legal-note">Koin yang diperoleh melalui pertukaran ini tunduk pada Kebijakan Item Virtual.</p>
+  <p class="legal-note">Coins obtained through this exchange are subject to our Virtual Items Policy. Since you are accepting your Coins, they are non-refundable.</p>
 
-  <button class="exchange-btn" id="exchangeBtn" disabled>Menukarkan</button>
+  <button class="exchange-btn" id="exchangeBtn" disabled>Exchange</button>
 
   <div class="toast" id="toast"></div>
 </div>
@@ -125,7 +125,7 @@
         <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
-    <p class="rewards-promo-text">Your invitation to quality content could get you a rewards percentage of up to 53%.</p>
+    <p class="rewards-promo-text">Your dedication to quality content could get you a rewards percentage of up to 53%.</p>
     <a href="#" class="rewards-learn-more" id="rewardsLearnMore">Learn more</a>
     <div class="rewards-divider"></div>
   </div>
@@ -170,12 +170,12 @@
       <img src="icons/coin-64.png" alt="" width="40" height="40" />
     </div>
 
-    <h3 class="confirm-title" id="confirmModalTitle">Selesaikan penukaran?</h3>
-    <p class="confirm-text" id="confirmText">$0.00 akan dipotong dari Saldo Koin Mustika dan dikirim ke <strong>@username</strong></p>
+    <h3 class="confirm-title" id="confirmModalTitle">Complete exchange?</h3>
+    <p class="confirm-text" id="confirmText">$0.00 will be deducted from LIVE rewards balance and sent to <strong>@username</strong></p>
 
     <div class="confirm-actions">
-      <button class="confirm-btn confirm-cancel" id="confirmCancelBtn" type="button">Kembali</button>
-      <button class="confirm-btn confirm-ok" id="confirmOkBtn" type="button">Tukar</button>
+      <button class="confirm-btn confirm-cancel" id="confirmCancelBtn" type="button">Go back</button>
+      <button class="confirm-btn confirm-ok" id="confirmOkBtn" type="button">Exchange</button>
     </div>
   </div>
 </div>
@@ -236,10 +236,10 @@
       <span class="modal-legal-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="13" height="13"><path d="M20 6L9 17l-5-5" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
-      <p>Koin yang diperoleh melalui pertukaran ini tunduk pada <strong>Kebijakan Item Virtual</strong> kami. Karena Anda menerima item virtual, koin tersebut tidak dapat dikembalikan.</p>
+      <p>Koin yang diperoleh melalui pertukaran ini tunduk pada <strong>Kebijakan Item Virtual</strong> kami. Karena Anda menerima item virtual, koin tersebut tidak dapat diGo backkan.</p>
     </div>
 
-    <button class="modal-exchange-btn" id="modalExchangeBtn" type="button" disabled>Tukar</button>
+    <button class="modal-exchange-btn" id="modalExchangeBtn" type="button" disabled>Exchange</button>
   </div>
 </div>
 
